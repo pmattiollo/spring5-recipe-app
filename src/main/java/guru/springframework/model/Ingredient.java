@@ -1,8 +1,11 @@
 package guru.springframework.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Data
 @Entity
 public class Ingredient {
 
@@ -19,35 +22,20 @@ public class Ingredient {
     @OneToOne
     private UnitOfMeasure unitOfMeasure;
 
-    public Long getId() {
-        return id;
+    public Ingredient() {
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure unitOfMeasure) {
         this.description = description;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
         this.amount = amount;
+        this.unitOfMeasure = unitOfMeasure;
     }
 
-    public Recipe getRecipe() {
-        return recipe;
-    }
-
-    public void setRecipe(Recipe recipe) {
+    public Ingredient(String description, BigDecimal amount, UnitOfMeasure unitOfMeasure, Recipe recipe) {
+        this.description = description;
+        this.amount = amount;
+        this.unitOfMeasure = unitOfMeasure;
         this.recipe = recipe;
     }
+
 }
