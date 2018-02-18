@@ -1,4 +1,4 @@
-package guru.springframework.service;
+package guru.springframework.services;
 
 import guru.springframework.model.Recipe;
 

@@ -1,4 +1,4 @@
-package guru.springframework.service;
+package guru.springframework.services;
 
 import guru.springframework.model.Recipe;
 import guru.springframework.repositories.RecipeRepository;
@@ -20,7 +20,7 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Set<Recipe> getRecipes() {
-        log.debug("I'm in the service");
+        log.debug("I'm in the services");
 
         Set<Recipe> recipes = new HashSet<>();
         recipeRepository.findAll().iterator().forEachRemaining(recipes::add);
